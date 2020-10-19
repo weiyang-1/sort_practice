@@ -9,18 +9,18 @@
 from tools import *
 
 
-def build_heap(l):
+def build_heap(p_list: list) -> None:
     """
     构建大顶堆
     :param l:
     :return:
     """
-    l_len = len(l)
+    l_len = len(p_list)
     for i in range((l_len - 2) // 2, -1, -1):
-        re_heap(l, l_len, i)
+        re_heap(p_list, l_len, i)
 
 
-def re_heap(h, size, root):
+def re_heap(r_list: list, size: int, root) -> None:
     """
     重构大顶堆
     :param h:
@@ -31,13 +31,13 @@ def re_heap(h, size, root):
     larger = root
     left = root * 2 + 1
     right = left + 1
-    if left < size and h[left] > h[larger]:
+    if left < size and r_list[left] > r_list[larger]:
         larger = left
-    if right < size and h[right] > h[larger]:
+    if right < size and r_list[right] > r_list[larger]:
         larger = right
     if larger != root:
-        h[larger], h[root] = h[root], h[larger]
-        re_heap(h, size, larger)
+        r_list[larger], r_list[root] = r_list[root], r_list[larger]
+        re_heap(r_list, size, larger)
 
 
 def heapsort(random_list: list) -> list:
