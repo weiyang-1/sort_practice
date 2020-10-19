@@ -40,7 +40,7 @@ def re_heap(h, size, root):
         re_heap(h, size, larger)
 
 
-def heapsort(random_list: list) ->list:
+def heapsort(random_list: list) -> list:
     """
     堆排序 大顶堆一直变化最大的数和最后一个数  经过多次变化可以实现全 数组的排序
     :param random_list:
